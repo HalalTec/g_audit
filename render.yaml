@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: g-audit
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health.php
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DB_SSLMODE
+        value: require
