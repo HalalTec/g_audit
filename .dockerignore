@@ -1,0 +1,11 @@
+.git
+.gitignore
+config/database.local.php
+database/setup.php
+app/**/php-error.log
+storage
+vendor
+node_modules
+Dockerfile*
+docker-compose*.yml
+README.md

@@ -39,10 +39,7 @@ function getDBConnection(): PDO
             $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
         } catch (PDOException $e) {
             error_log('G&G Audit DB Error: ' . $e->getMessage());
-            die('<div style="font-family:sans-serif;padding:2rem;color:#991b1b">
-                    <h2>Database connection failed.</h2>
-                    <p>Please check your Supabase DATABASE_URL configuration.</p>
-                 </div>');
+            throw new RuntimeException('Database connection failed.', 0, $e);
         }
     }
     return $pdo;
